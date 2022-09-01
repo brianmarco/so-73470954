@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  web:
+    image: "node:18"
+    ports:
+      - "8000:3000"
+    volumes:
+      - ../code:/home/node/app 
+    working_dir: /home/node/app
+    command: bash -c "node src/server/index.js"
+  redis:
+    image: "redis:alpine"
